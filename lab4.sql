@@ -68,7 +68,6 @@ select distinct p.nazwa, p.opis, p.cena from pudelka p natural join zawartosc jo
 select distinct p.nazwa, p.opis, p.cena from pudelka p natural join zawartosc join czekoladki c using (idczekoladki)
 EXCEPT
 select distinct p.nazwa, p.opis, p.cena from pudelka p natural join zawartosc join czekoladki c using (idczekoladki) where czekolada = 'gorzka';
---TODO check
 --6 - zawierają co najmniej 3 sztuki czekoladki Gorzka truskawkowa,
 select distinct p.nazwa, p.opis, p.cena from pudelka p natural join zawartosc z join czekoladki c using (idczekoladki) where z.sztuk >=3 and c.nazwa = 'Gorzka truskawkowa';
 --7 - nie zawierają czekoladek z orzechami, (można wykorzystać operator EXCEPT)
