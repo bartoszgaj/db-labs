@@ -21,7 +21,6 @@ SELECT k.nazwa, z.idzamowienia FROM klienci k NATURAL JOIN zamowienia z;
 
 --4.2 - Napisz zapytanie w języku SQL wyświetlające informacje na temat zamówień (data realizacji, idzamowienia), które:
 --1 - zostały złożone przez klienta, który ma na imię Antoni,
-SELECT * FROM zamowienia natural join klienci;
 SELECT datarealizacji, idzamowienia, nazwa FROM zamowienia natural join klienci where nazwa like '% Antoni';
 --2 - zostały złożone przez klientów z mieszkań (zwróć uwagę na pole ulica),
 SELECT datarealizacji, idzamowienia, ulica FROM zamowienia natural join klienci where ulica like '%/%';
@@ -36,7 +35,6 @@ select k.nazwa, ulica, miejscowosc, p.nazwa from klienci k natural join zamowien
 --3 - złożyli przynajmniej jedno zamówienie,
 select distinct nazwa from zamowienia natural join klienci;
 --4 - nie złożyli żadnych zamówień, (złożenie zewnętrzne)
---TODO - złożenia zewnętrzne
 select distinct nazwa from klienci full join zamowienia using(idklienta) where idzamowienia is null;
 --5 - złożyli zamówienia z datą realizacji w listopadzie 2013,
 SELECT nazwa, datarealizacji, idzamowienia FROM zamowienia natural join klienci where extract(month from datarealizacji) = 11 and extract(year from datarealizacji) = 2013;

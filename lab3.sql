@@ -1,4 +1,4 @@
---Lab3
+  --Lab3
 --Selekcja oparta na jednej tabeli: funkcje operujące na datach i napisach, porównywanie wzorców (like, similar to). Łączenie wyników zapytań (union, intersect, except). Obliczenia w zapytaniach.
 
 --3.1 - Napisz zapytanie w języku SQL wyświetlające informacje na temat zamówień, które mają być zrealizowane:
@@ -35,7 +35,7 @@ select nazwa from czekoladki where nazwa like 'S%m%';
 select nazwa from czekoladki where nazwa like '%maliny%' or nazwa like '%truskawki%';
 --8 - nie rozpoczyna się żadną z liter: 'D'-'K', 'S' i 'T',
 TODO nawiasy kwadratowe czy okragle?
-select nazwa from czekoladki where nazwa not similar to '[D-K|S|T]%';
+select nazwa from czekoladki where nazwa not similar to '([D-K]|S|T)%';
 --9 - rozpoczyna się od 'Slod' ('Słod'),
 select nazwa from czekoladki where nazwa like 'Słod%';
 --10 -składa się dokładnie z jednego słowa.
@@ -52,7 +52,7 @@ select telefon from klienci where telefon not like '% % % %'
 --3.4 - Korzystając z zapytań z zadania 2.4 oraz operatorów UNION, INTERSECT, EXCEPT napisz zapytanie w języku SQL wyświetlające informacje na temat czekoladek, których:
 --1 - masa mieści się w przedziale od 15 do 24 g lub koszt produkcji mieści się w przedziale od 15 do 24 gr,
 select nazwa,masa,koszt from czekoladki where masa between 15 and 24
-intersect
+union
 select nazwa, masa, koszt from czekoladki where koszt between 0.15 and 0.24;
 --2 - masa mieści się w przedziale od 25 do 35 g, ale koszt produkcji nie mieści się w przedziale od 25 do 35 gr,
 select nazwa,masa,koszt from czekoladki where masa between 25 and 35
