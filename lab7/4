@@ -1,0 +1,9 @@
+Zamowienie : {zamowienieNr, klientNr, fakturaNr, pracownikNr}
+Klient: {KlientNr}  X
+Artykul: {artykulNr} X
+Faktura: {fakturaNr, metodaPlNr}
+MetodaPlatnosci: {metodaPlNr} X
+SzczegolyZamowienia: {___, zamowienieNr, artykulNr} X
+Transport: {transportNr, ___, pracownikNr, sposobTrNr} X
+Pracownik: {pracownikNr} X
+SposobTransportu: {sposobTrNr} X
